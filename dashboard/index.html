@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — Pre-Token Protocol Board</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Token Radar</h1>
+    <p class="sub">Pre-token protocols ranked by implied launch value. Snapshot: <span id="asof">—</span>. A protocol listed here records no token — that is what DefiLlama's record says, never proof it has none.</p>
+  </div>
+  <div class="stat"><span id="count">—</span><label>protocols ranked</label></div>
+  <div class="stat"><span id="topval">—</span><label>top implied value</label></div>
+</header>
+<section class="controls">
+  <input id="q" type="search" placeholder="Search name or slug…" aria-label="Search">
+  <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+  <select id="chain" aria-label="Chain"><option value="">All chains</option></select>
+  <select id="sort" aria-label="Sort by">
+    <option value="implied">Sort: implied value</option>
+    <option value="tvl">Sort: TVL</option>
+    <option value="chg">Sort: 7-day change</option>
+    <option value="age">Sort: oldest first</option>
+  </select>
+</section>
+<main id="view"></main>
+<footer>
+  <p>How the value is built: implied value = TVL × category peer multiple (median market-cap/TVL of live-token protocols in the same category) × 7-day growth factor × listing-age factor × chain-diversity factor. It is this board's own claim, not a forecast of a launch. Farm steps name real actions with costs and times; check the protocol yourself before moving funds.</p>
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
